@@ -29,7 +29,7 @@ def main(workflow):
         if not lyrics:
             continue
 
-        path = song["path"].replace("/", "").replace("-lyrics", "")
+        path = song["path"].replace("/", "").replace("-lyrics", "").lower()
 
         lyrics_path = save_lyrics(lyrics, name=path)
         image_path = download_image(song["header_image_url"], name=path)
