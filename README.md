@@ -6,4 +6,4 @@
 ![Lyrics Finder example](/img/andromeda.png)
 
 
-Note: an access token to genius' api needs to be provided in an enviroment variable called "GENIUS_ACCESS_TOKEN".
+> Note: an access token to genius' api needs to be provided in an enviroment variable called "GENIUS_ACCESS_TOKEN".
