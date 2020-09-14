@@ -83,12 +83,12 @@ __version__ = "3.2.2"
 __copyright__ = "Copyright (c) 2004-2019 Leonard Richardson"
 __license__ = "New-style BSD"
 
-from sgmllib import SGMLParser, SGMLParseError
 import codecs
 import markupbase
-import types
 import re
 import sgmllib
+from sgmllib import SGMLParser, SGMLParseError
+
 try:
   from htmlentitydefs import name2codepoint
 except ImportError:
