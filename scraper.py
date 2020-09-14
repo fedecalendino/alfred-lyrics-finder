@@ -33,5 +33,5 @@ def fetch_lyrics(url, attemps=5):
     try:
         return _fetch(url)
     except:
-        time.sleep(1)
+        time.sleep(0.1)
         return fetch_lyrics(url, attemps=attemps - 1)
