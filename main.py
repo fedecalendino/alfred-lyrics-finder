@@ -22,11 +22,8 @@ def main(workflow):
 
     text = " ".join(workflow.args).lower()
 
-    for song in genius.search(text, per_page=7):
-        image_path = download_image(
-            song["header_image_url"],
-            name=song["path"]
-        )
+    for song in genius.search(text, per_page=10):
+        image_path = download_image(song["header_image_url"], song["path"])
 
         workflow.add_item(
             title=u"{title}".format(

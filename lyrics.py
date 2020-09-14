@@ -1,26 +1,22 @@
 # coding=utf-8
 
-import os
 import sys
 
 from workflow import Workflow
 
-from genius import Genius
 from scraper import fetch_lyrics
-from utils import download_image, save_lyrics
+from utils import load_image, load_lyrics, save_lyrics
 
 
 def main(workflow):
     url = workflow.args[0]
-    lyrics = fetch_lyrics(url)
-
     path = url.split("/")[-1]
-    lyrics_path = save_lyrics(lyrics, name=path)
 
-    try:
-        image_path = download_image("", name=path)
-    except:
-        image_path = None
+    image_path = load_image(path)
+    lyrics_path = load_lyrics(path)
+
+    if not lyrics_path:
+        lyrics_path = save_lyrics(fetch_lyrics(url), path)
 
     workflow.add_item(
         title="Open lyrics...",
