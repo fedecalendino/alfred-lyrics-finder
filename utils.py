@@ -1,8 +1,13 @@
+import os
+
 from workflow import web
 
 
 def download_image(url, name):
     filename = u"/tmp/{name}.png".format(name=name)
+
+    if os.path.isfile(filename):
+        return filename
 
     with open(filename, "wb") as f:
         f.write(web.get(url).content)

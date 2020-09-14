@@ -8,11 +8,24 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
-		<key>D82C7A9C-2C99-48F7-AC68-281CAEB8ED68</key>
+		<key>32EC61B3-D59E-4C32-A623-4169901C73D3</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>CE0A8FF0-0D55-4036-AC0B-F9494B5FD271</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D82C7A9C-2C99-48F7-AC68-281CAEB8ED68</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>32EC61B3-D59E-4C32-A623-4169901C73D3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -32,6 +45,68 @@
 	<string>Lyrics Finder</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>CE0A8FF0-0D55-4036-AC0B-F9494B5FD271</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Fetching lyrics from genius.com ...</string>
+				<key>script</key>
+				<string>python ./lyrics.py $@</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>32EC61B3-D59E-4C32-A623-4169901C73D3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -81,21 +156,6 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>CE0A8FF0-0D55-4036-AC0B-F9494B5FD271</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>Search for song lyrics in genius.com
@@ -104,10 +164,17 @@
 Note: an access token to genius' api needs to be provided in an enviroment variable called "GENIUS_ACCESS_TOKEN".</string>
 	<key>uidata</key>
 	<dict>
+		<key>32EC61B3-D59E-4C32-A623-4169901C73D3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>265</integer>
+			<key>ypos</key>
+			<integer>35</integer>
+		</dict>
 		<key>CE0A8FF0-0D55-4036-AC0B-F9494B5FD271</key>
 		<dict>
 			<key>xpos</key>
-			<integer>205</integer>
+			<integer>515</integer>
 			<key>ypos</key>
 			<integer>35</integer>
 		</dict>
@@ -129,7 +196,7 @@ Note: an access token to genius' api needs to be provided in an enviroment varia
 		<string>GENIUS_ACCESS_TOKEN</string>
 	</array>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/federicocalendino/alfred-lyrics-finder</string>
 </dict>
