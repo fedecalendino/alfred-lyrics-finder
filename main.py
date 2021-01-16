@@ -10,6 +10,7 @@ from utils import download_image
 
 
 def main(workflow):
+    per_page = int(os.getenv("LIST_SIZE", "5"))
     token = os.getenv("GENIUS_ACCESS_TOKEN", "")
 
     if not token:
@@ -22,7 +23,7 @@ def main(workflow):
 
     text = " ".join(workflow.args).lower()
 
-    for song in genius.search(text, per_page=10):
+    for song in genius.search(text, per_page=per_page):
         image_path = download_image(song["header_image_url"], song["path"])
 
         workflow.add_item(
